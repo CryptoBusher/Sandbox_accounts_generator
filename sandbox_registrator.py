@@ -457,8 +457,9 @@ if __name__ == "__main__":
             logger.success('Sandbox account registered.')
 
         FileManager.append_txt_file('registered_accounts', f'{sandbox_account.username}:{sandbox_account.email}'
-                                                           f'{sandbox_account.password}:{proxies_list[i]}'
-                                                           f'{user_agents_list[i]}')
+                                                           f':{sandbox_account.password}:{metamask_account.public_key}'
+                                                           f':{metamask_account.seed_phrase}:{proxies_list[i]}'
+                                                           f':{user_agents_list[i]}')
         logger.success('Data saved to txt file.')
 
         profile_stopped = dolphin_profile.stop_profile()
